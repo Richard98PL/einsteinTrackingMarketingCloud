@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script async type="text/javascript" data-cookieconsent="marketing" src="https://xxx.collect.igodigital.com/collect.js"></script>
+    </head>
+
+    <script>
+        var _etmc = [];
+        _etmc.push(["setOrgId", "510000038"]);
+        _etmc.push(["trackPageView"]);
+    </script>
+
+    <body>
+        <table>
+        <tr>
+            <div>
+                <input id ="inputIgoProfile" type="text"/>
+                <button onclick="executeIgoProfile()">Click here [IGO PROFILES]!</button>
+            </div>
+         </tr>
+
+        <tr>
+            <div>
+                <input id ="inputIgoView" type="text"/>
+                <button onclick="executeIgoView()">Click here [IGO VIEW]!</button>
+            </div>
+        </tr>
+    </table>
+    </body>
+
+    <script>
+            function executeIgoProfile(){
+                let input = document.getElementById("inputIgoProfile").value;
+                console.log(input);
+
+                _etmc.push(["setOrgId", "510000038"]);
+                _etmc.push(["setUserInfo", {"email": input}]);
+                _etmc.push(["trackPageView"]);
+
+            }
+
+            function executeIgoView(){
+                let input = document.getElementById("inputIgoView").value;
+                console.log(input);
+                input = "housing_sales_page_view";
+                _etmc.push(["setOrgId", "510000038"]);
+                _etmc.push(["trackPageView", { "item" : input , "search" : "testSearch"}]);
+            }
+        </script>
+</html>
